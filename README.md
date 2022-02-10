@@ -80,4 +80,4 @@ ajax.getJSON(<url>);
 
 [Server](https://polling-alexa222.herokuapp.com/)
 
-[GH-Page]()
+[GH-Page][![Build status](https://ci.appveyor.com/api/projects/status/w72ooth4v0g5kwts/branch/main?svg=true)](https://ci.appveyor.com/project/222Alexa44925/ahj-11-1/branch/main)
