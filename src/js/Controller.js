@@ -21,25 +21,22 @@ export default class Controller {
     this.messagesStream$ = interval(2000)
       .pipe(
         mergeMap(() =>
-          //  ajax
-          //.getJSON("http://localhost:8080/messages/unread")
-          ajax
-            .getJSON(`https://polling-alexa222.herokuapp.com/messages/unread`)
-            .pipe(
-              map((response) => {
-                const newMsgs = response.messages.filter(
-                  (message) => !this.messagesId.has(message.id)
-                );
+          //ajax.getJSON("http://localhost:8080/messages/unread").pipe(
+          ajax.getJSON(`https://coatest.herokuapp.com/messages/unread`).pipe(
+            map((response) => {
+              const newMsgs = response.messages.filter(
+                (message) => !this.messagesId.has(message.id)
+              );
 
-                newMsgs.forEach((message) => this.messagesId.add(message.id));
-                return newMsgs;
-              }),
-              catchError((err) => {
-                err.response === null
-                  ? this.messagesStream$.unsubscribe()
-                  : of([]);
-              })
-            )
+              newMsgs.forEach((message) => this.messagesId.add(message.id));
+              return newMsgs;
+            }),
+            catchError((err) => {
+              err.response === null
+                ? this.messagesStream$.unsubscribe()
+                : of([]);
+            })
+          )
         )
       )
 
