@@ -21,7 +21,6 @@ export default class Controller {
     this.messagesStream$ = interval(2000)
       .pipe(
         mergeMap(() =>
-          //ajax.getJSON("http://localhost:8080/messages/unread").pipe(
           ajax.getJSON(`https://coatest.herokuapp.com/messages/unread`).pipe(
             map((response) => {
               const newMsgs = response.messages.filter(
