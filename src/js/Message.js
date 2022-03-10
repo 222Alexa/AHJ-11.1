@@ -1,4 +1,4 @@
-export default class Post {
+export default class Message {
   constructor(data) {
     this.data = data;
     this.created = new Date(data.received).toLocaleString();
@@ -50,7 +50,7 @@ export default class Post {
     if (text.length <= 15) {
       return;
     }
-    const result = text.splice(0, 15);
+    const result = text.slice(0, 15);
     data.body = result.toString().replaceAll(",", "").concat("...");
   }
 }

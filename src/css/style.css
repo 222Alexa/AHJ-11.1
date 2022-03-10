@@ -108,8 +108,57 @@ img.author__avatar {
 
 button.btn {
   position: fixed;
-  top: 30px;
+
   right: 8%;
+  width: 100px;
+  height: 50px;
+  background-color: rebeccapurple;
+  color: wheat;
+}
+
+.btn-subscribe {
+  top: 30px;
+}
+
+.btn-unsubscribe {
+  top: 100px;
+}
+
+.modal {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: -1000;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: scroll;
+  padding: 60px 15px;
+}
+
+.modal-content {
+  width: 340px;
+  height: 200px;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-active {
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.modal-send__btn{
   width: 100px;
   height: 50px;
   background-color: rebeccapurple;
