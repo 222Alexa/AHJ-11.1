@@ -22,7 +22,7 @@ export default class Modal {
       return;
     }
     this.parentEl.insertAdjacentHTML("afterbegin", this.constructor.markup);
-    this.modalWrapperEl.classList.add("modal-active");
+    this.modalWrapperEl.classList.remove("modal-active");
     this.modalButtonEl.addEventListener("click", (e) => {
       e.preventDefault();
       this.closeModalForm();
@@ -39,6 +39,6 @@ export default class Modal {
 
   closeModalForm() {
     this.modalWrapperEl.classList.remove("modal-active");
-    this.parentEl.querySelector(".modal").remove();
+    //this.parentEl.querySelector(".modal").remove();
   }
 }
